@@ -1,7 +1,7 @@
 #include <Wire.h> 
 #include <LiquidCrystal_I2C.h>
 
-LiquidCrystal_I2C lcd(0x27,20,4);  // set the LCD address to 0x27 for a 16 chars and 2 line display
+LiquidCrystal_I2C lcd(0x27,20,4);  // set the LCD address to 0x27 for a 20 chars and 4 line display
 
 void setup()
 {
@@ -12,7 +12,6 @@ void setup()
   lcd.print("Make Your Choice ?");
 }
 
-
 void loop()
 {
   lcd.setCursor(0,1);
@@ -20,6 +19,7 @@ void loop()
   lcd.setCursor(13,1);
   if(keyMapper(A0) != '\0'){lcd.print(keyMapper(A0));}
 }
+
 char keyMapper(char analogPin  [2] )
 {
   char keypad = '\0';
